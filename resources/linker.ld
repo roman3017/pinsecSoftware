@@ -18,8 +18,14 @@ OUTPUT_ARCH( "riscv" )
 /*----------------------------------------------------------------------*/
 
 MEMORY {
-  onChipRam (W!RX)/*(RX)*/ : ORIGIN = 0x00000000, LENGTH = 96K
-  sdram (W!RX) : ORIGIN = 0x40000000, LENGTH = 64M
+
+  onChipRam (W!RX) : ORIGIN = 0x00000000, LENGTH = 4K
+  sdram (W!RX) : ORIGIN = 0x40000000, LENGTH = 32M
+
+/*
+  onChipRam (W!RX) : ORIGIN = 0x00000000, LENGTH = 4K
+  sdram (W!RX) : ORIGIN = 0x00001000, LENGTH = 32K
+*/
 }
 _stack_size = 2k;
 _heap_size = 8k;
