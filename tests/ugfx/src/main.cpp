@@ -57,9 +57,9 @@ int main() {
 
 }
 
-int  times (){
-  int value = timerA.getValue();
-  return value;
+int times(void)
+{
+	return timerA.getValue();
 }
 
 systemticks_t gfxSystemTicks(void)
@@ -69,13 +69,11 @@ systemticks_t gfxSystemTicks(void)
 
 systemticks_t gfxMillisecondsToTicks(delaytime_t ms)
 {
-	return ms*50*1000;
+	return ms*(CORE_HZ/1000);
 }
 
-
-
-void irqCpp(uint32_t irq){
-
+void irqCpp(uint32_t irq)
+{
 }
 
 #ifdef __cplusplus
